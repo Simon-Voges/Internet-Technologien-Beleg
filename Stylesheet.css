@@ -1,0 +1,55 @@
+* {
+
+    margin: 0;
+    padding: 0; 
+    
+}
+
+body { 
+
+        background-color: aqua;
+        height: 100vh; 
+
+}
+
+header {
+
+    background: aliceblue; 
+
+}
+
+aside { 
+
+    background: greenyellow;
+
+}
+
+nav {
+
+    background: skyblue;
+
+
+
+
+}
+
+main {
+
+    background: lightyellow;
+
+
+}
+
+footer{
+
+    background: wheat; 
+    text-align: center; 
+
+}
+
+header, main, nav, aside, footer {
+    margin: 0.25em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title>Struct</title>
+    <meta charset ="UTF-8"> 
+    <meta name="viewport" content ="width=device-width,initial scale =1.0"/> 
+    <meta name="mobile-web-app-capable" content ="yes"/>
+    <meta name ="ROBOTS" content ="INDEX,FOLLOW"/>  
+
+    <link rel="stylesheet" href="Stylesheet.css" type= "text/css"/>
+    <script src ="Scripts.js" type="text/javascript" defer> </script> 
+    <link rel="stylesheet" href="scripts/katex/katex.css" type="text/css"/>
+    <script src="scripts/katex/katex.min.js" type="text/javascript" defer></script>
+    <script src="scripts/katex/contrib/auto-render.min.js" type="text/javascript" defer></script>
+    <noscript>
+        Sie haben JavaScript deaktiviert. Diese Seite benötigt zwingend JavaScript.
+    </noscript>
+</head>  
+
+<body>
+<header>Header</header>
+<nav>Navigation</nav>
+<aside>Sidebar</aside>
+
+<main>
+    <div id ="category-selection">
+        <label for="category-selection">Choose a category:</label>
+        <select name="category" id="category">
+            <option value="mathe">Mathe</option>
+            <option value="physik">Physik</option>
+            <option value="generelles-wissen">Generelles Wissen</option>
+            <option value="geography">Geopgraphy</option>
+        </select>
+    </div>
+    <button id ="start">Start</button>
+
+    <div id="quiz-auswahl" style="display:none">
+        <div id = "boo">Aufgabe</div> 
+
+        <p> </p>
+        <form>
+            <fieldset id="Aufgabenwahl">
+                <input type="radio" id ="auf1" name="auf" value="1" checked="checked">
+                <label for="auf1">Aufgabe 1</label>
+                <input type="radio" id ="auf2" name ="auf" value="2">
+                <label for="auf2">Aufgabe 2</label>
+            </fieldset>
+        </form>
+
+        <div id="answer">
+            <button id="1" onclick="checkAnswer()">Answer 1</button>
+
+            <button id="2"onclick="checkAnswer()">Answer 2</button>
+            <button id="3"onclick="checkAnswer()">Answer 3</button>
+            <button id="4"onclick="checkAnswer()">Answer 4</button>
+        </div>
+        <p id ="text"> Wähle die passende Antwort!</p>
+    </div>
+</main>
+
+
+
+<footer>Footer</footer>
+</body>
+</html>
