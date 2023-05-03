@@ -42,15 +42,7 @@ class Model {
         const randomIndex = Math.floor(Math.random() * categoryQuestion.length); // randomizer which can display same question multiple times 
         return categoryQuestion[randomIndex];
     }
-    checkAnswer() {
-        let frage = this.getTask(this.anr);
-        let correctAnswer = eval(frage);
-        let answerArray = this.p.setTask
-        //  for ()
 
-
-        //todo 
-    }
 }
 
 //################## Controller ##############
