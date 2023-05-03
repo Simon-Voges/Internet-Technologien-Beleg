@@ -44,7 +44,7 @@ class Model {
         }; 
 
         const categoryQuestion = questions[selectedCategory]; 
-        const randomIndex = Math.floor(Math.random() * categoryQuestion.length);
+        const randomIndex = Math.floor(Math.random() * categoryQuestion.length); // randomizer which can display same question multiple times 
         return categoryQuestion[randomIndex]; 
     }
     checkAnswer() {
@@ -65,7 +65,8 @@ class Presenter {
         this.anr = 0;
         this.correctAnswerCount = 0;
         this.wrongAnswerCount = 0;
-        this.selectedCategory ="";   
+        this.selectedCategory ="";
+        this.questionCounter = 0;    
     }
 
     setModelandView(m,v) {
@@ -99,7 +100,7 @@ class Presenter {
         //answers = this.shuffleArray(answers); 
 
         const shuffledArray = answers.sort((a, b) => 0.5 - Math.random());
-        let temp = []; 
+    
        
 
 
@@ -127,7 +128,13 @@ class Presenter {
             this.wrongAnswerCount++; 
             console.log("Wrong answer numner: " + this.wrongAnswerCount)
         }
+        this.questionCounter++; 
+        if (this.questionCounter >=4) {
+            this.questionCounter =0; 
+            this.v.resetCategorySelection(); 
+        } else{
         this.setTask(this.selectedCategory); 
+        }
         
     }
 
@@ -165,6 +172,7 @@ class View {
 
     }
 
+
     start(){
         const selectedCategory = document.getElementById("category").value; // get selected category
 
@@ -175,6 +183,12 @@ class View {
         this.p.startQuiz(selectedCategory); 
     
 
+    }
+
+    resetCategorySelection() {
+        document.getElementById("quiz-auswahl").style.display="none"; 
+        document.getElementById("category-selection").style.display="block";
+        document.getElementById("start").style.display ="block";
 
     }
 
