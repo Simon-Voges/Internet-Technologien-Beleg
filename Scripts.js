@@ -126,9 +126,10 @@ class Presenter {
             console.log("Correct answer Number: " + this.correctAnswerCount);
         } else {
             this.wrongAnswerCount++; 
-            console.log("Wrong answer numner: " + this.wrongAnswerCount)
+            console.log("Wrong answer numner: " + this.wrongAnswerCount);
         }
         this.questionCounter++; 
+        console.log("Questions answered: " +this.questionCounter);
         if (this.questionCounter >=4) {
             this.questionCounter =0; 
             this.v.resetCategorySelection(); 
