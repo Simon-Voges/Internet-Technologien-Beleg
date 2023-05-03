@@ -66,7 +66,13 @@ class Presenter {
         this.correctAnswerCount = 0;
         this.wrongAnswerCount = 0;
         this.selectedCategory ="";
-        this.questionCounter = 0;    
+        this.questionCounter = 0;
+        this.categoryName = {
+            mathe: "Mathe",
+            physik: "Physik",
+            generellesWissen: "Generelles Wissen", 
+            geography: "Geography"
+        };    
     }
 
     setModelandView(m,v) {

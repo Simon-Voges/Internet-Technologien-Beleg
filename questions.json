@@ -1,0 +1,58 @@
+{
+    "mathe": [
+        {
+        "question":  "10 + 10", 
+        "answer" : ["20", "25", "10", "18" ]
+        },
+        {
+            "question": "5 * 6",
+            "answer": ["30","20","25","33"]
+        },
+        {
+            "question": " 17 + 13",
+            "answer": ["30","40","33","19"]
+        },
+        {
+            "question": "4 * 7",
+            "answer": ["28","30","40","26"]
+        }
+    ],
+
+    "internet-tech": [
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        }
+
+    ],
+    "generelles-wissen": [
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        },
+        {
+            "question": "",
+            "answer": ["","","",""]
+        }
+    ]
+}
