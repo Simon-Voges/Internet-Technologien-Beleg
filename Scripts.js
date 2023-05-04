@@ -174,6 +174,11 @@ class View {
 
     start() {
         const selectedCategory = document.getElementById("category").value; // get selected category
+        if(selectedCategory === "") {
+            return; 
+
+        }
+        else {
 
         const allOptions=document.querySelectorAll("#category option");
         allOptions.forEach(option => option.removeAttribute("disabled")); 
@@ -182,7 +187,11 @@ class View {
         document.getElementById("start").style.display = "none"; // hide start button
         document.getElementById("quiz-auswahl").style.display = "block"; //show questions
 
+        const emptyOption = document.querySelector('#category option[value=""]');
+        emptyOption.removeAttribute("selected");
+
         this.p.startQuiz(selectedCategory);
+        }
 
 
 
@@ -200,6 +209,8 @@ class View {
                 optionElement.style.display="none"; 
             }
         }
+
+        document.getElementById("category").value =""; 
 
     }
 
