@@ -64,7 +64,12 @@ class Presenter {
             mathe: 0,
             internetTech: 0,
             generellesWissen: 0,
-        }
+        };
+        this.categoryPlayed = {
+            mathe: false,
+            internetTech: false,
+            generellesWissen: false
+        };
     }
 
     setModelandView(m, v) {
@@ -74,6 +79,7 @@ class Presenter {
     startQuiz(selectedCategory) {
         this.selectedCategory = selectedCategory;
         this.setTask(selectedCategory);
+        this.categoryPlayed[this.selectedCategory] = true; 
     }
 
     setTask(selectedCategory) {
@@ -134,6 +140,7 @@ class Presenter {
         console.log("Questions answered: " + this.questionCounter);
         if (this.questionCounter >= 4) {
             this.questionCounter = 0;
+            this.categoryPlayed[this.selectedCategory] = true; 
             this.v.resetCategorySelection();
         } else {
             this.setTask(this.selectedCategory);
@@ -143,17 +150,6 @@ class Presenter {
 
 }
 
-
-
-// checkAnswer(answer) {
-//     console.log("Antwort ", answer);
-//     let frag=this.m.getTask(this.anr); 
-//     let correctAnswer = eval(frag);  
-// for (let i = answers.length; i--){
-
-// } 
-
-// }
 
 
 
@@ -179,6 +175,9 @@ class View {
     start() {
         const selectedCategory = document.getElementById("category").value; // get selected category
 
+        const allOptions=document.querySelectorAll("#category option");
+        allOptions.forEach(option => option.removeAttribute("disabled")); 
+
         document.getElementById("category-selection").style.display = "none"; //hide category selection 
         document.getElementById("start").style.display = "none"; // hide start button
         document.getElementById("quiz-auswahl").style.display = "block"; //show questions
@@ -193,6 +192,14 @@ class View {
         document.getElementById("quiz-auswahl").style.display = "none";
         document.getElementById("category-selection").style.display = "block";
         document.getElementById("start").style.display = "block";
+
+        for(const category in this.p.categoryPlayed) {
+            const optionElement = document.querySelector(`#category option[value="${category}"]`);
+            if (this.p.categoryPlayed[category]) {
+                optionElement.setAttribute ("disabled","disabled");
+                optionElement.style.display="none"; 
+            }
+        }
 
     }
 
